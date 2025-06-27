@@ -1,0 +1,57 @@
+<header class="dashboard-header">
+  <div class="dashboard-header-content">
+    <div class="dashboard-logo">
+      Customer Portal <span class="dashboard-logo-jp">カスタマーポータル</span>
+    </div>
+    <div class="dashboard-welcome">ようこそ、ユーザー様！ Welcome, User!</div>
+    <button class="dashboard-logout-btn" (click)="logout()">
+      <span class="dashboard-logout-icon">🚪</span> ログアウト
+    </button>
+  </div>
+</header>
+<main class="dashboard-main">
+  <div class="dashboard-grid">
+    <div class="dashboard-card" (click)="goToPolicy()" style="cursor: pointer">
+      <div class="dashboard-card-icon">📝</div>
+      <div class="dashboard-card-title">Policy / 契約</div>
+      <div class="dashboard-card-desc">Active: 3<br />Renewal Due: 1</div>
+    </div>
+    <div class="dashboard-card">
+      <div class="dashboard-card-icon">💰</div>
+      <div class="dashboard-card-title">Claims / 保険金請求</div>
+      <div class="dashboard-card-desc">Open: 2<br />Closed: 5</div>
+    </div>
+    <div class="dashboard-card">
+      <div class="dashboard-card-icon">📄</div>
+      <div class="dashboard-card-title">Bill / 請求書</div>
+      <div class="dashboard-card-desc">Unpaid: 1<br />Paid: 4</div>
+    </div>
+    <div class="dashboard-card">
+      <div class="dashboard-card-icon">💳</div>
+      <div class="dashboard-card-title">Payment / お支払い</div>
+      <div class="dashboard-card-desc">Last: ¥12,000<br />Next: ¥8,000</div>
+    </div>
+    <div class="dashboard-card">
+      <div class="dashboard-card-icon">👤</div>
+      <div class="dashboard-card-title">Insured / 被保険者</div>
+      <div class="dashboard-card-desc">Primary: 山田太郎<br />Family: 3</div>
+    </div>
+    <div class="dashboard-card">
+      <div class="dashboard-card-icon">📥</div>
+      <div class="dashboard-card-title">Download / ドキュメント</div>
+      <div class="dashboard-card-desc">Available: 12<br />Recent: 2</div>
+    </div>
+    <div class="dashboard-card">
+      <div class="dashboard-card-icon">🔔</div>
+      <div class="dashboard-card-title">
+        Notification & Alerts / 通知・アラート
+      </div>
+      <div class="dashboard-card-desc">Unread: 3<br />Total: 15</div>
+    </div>
+    <div class="dashboard-card">
+      <div class="dashboard-card-icon">🛠️</div>
+      <div class="dashboard-card-title">Self-Services / セルフサービス</div>
+      <div class="dashboard-card-desc">Requests: 1<br />Completed: 7</div>
+    </div>
+  </div>
+</main>
