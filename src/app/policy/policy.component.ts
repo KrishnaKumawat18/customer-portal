@@ -5,12 +5,26 @@ import { CommonModule } from '@angular/common';
 import { HeaderComponent } from '../shared/header.component';
 import { Router } from '@angular/router';
 
-interface Policy {
-  id: number;
-  name: string;
-  type: string;
-  status: string;
+interface PolicyCoverage {
+  coverageId: string;
+  coverageType: string;
+  planCd: string;
+  faceAmount: string;
   premium: string;
+  beneficiaryId: string;
+}
+
+interface Policy {
+  policyNumber: string;
+  productName: string;
+  policyType: string;
+  policyStatus: string;
+  standardPremium: string;
+  paymentMethod: string;
+  effectiveStartDT: string;
+  policyRenewalStatus: string;
+  policyRenewalDT: string;
+  coverages: PolicyCoverage[];
 }
 
 @Component({
@@ -23,25 +37,75 @@ interface Policy {
 export class PolicyComponent {
   policies: Policy[] = [
     {
-      id: 1,
-      name: '自動車保険',
-      type: 'Auto',
-      status: 'Active',
-      premium: '¥12,000',
+      policyNumber: 'POL-1001',
+      productName: '自動車保険',
+      policyType: 'Auto',
+      policyStatus: 'Active',
+      standardPremium: '¥12,000',
+      paymentMethod: 'Credit Card',
+      effectiveStartDT: '2024-04-01',
+      policyRenewalStatus: 'Due',
+      policyRenewalDT: '2025-04-01',
+      coverages: [
+        {
+          coverageId: 'COV-001',
+          coverageType: 'Collision',
+          planCd: 'PLN-A',
+          faceAmount: '¥1,000,000',
+          premium: '¥5,000',
+          beneficiaryId: 'BEN-001',
+        },
+        {
+          coverageId: 'COV-002',
+          coverageType: 'Liability',
+          planCd: 'PLN-B',
+          faceAmount: '¥2,000,000',
+          premium: '¥7,000',
+          beneficiaryId: 'BEN-002',
+        },
+      ],
     },
     {
-      id: 2,
-      name: '火災保険',
-      type: 'Fire',
-      status: 'Active',
-      premium: '¥8,000',
+      policyNumber: 'POL-1002',
+      productName: '火災保険',
+      policyType: 'Fire',
+      policyStatus: 'Active',
+      standardPremium: '¥8,000',
+      paymentMethod: 'Bank Transfer',
+      effectiveStartDT: '2023-10-01',
+      policyRenewalStatus: 'Active',
+      policyRenewalDT: '2024-10-01',
+      coverages: [
+        {
+          coverageId: 'COV-010',
+          coverageType: 'Building',
+          planCd: 'PLN-C',
+          faceAmount: '¥5,000,000',
+          premium: '¥8,000',
+          beneficiaryId: 'BEN-003',
+        },
+      ],
     },
     {
-      id: 3,
-      name: '医療保険',
-      type: 'Medical',
-      status: 'Expired',
-      premium: '¥5,000',
+      policyNumber: 'POL-1003',
+      productName: '医療保険',
+      policyType: 'Medical',
+      policyStatus: 'Expired',
+      standardPremium: '¥5,000',
+      paymentMethod: 'Credit Card',
+      effectiveStartDT: '2022-01-01',
+      policyRenewalStatus: 'Expired',
+      policyRenewalDT: '2023-01-01',
+      coverages: [
+        {
+          coverageId: 'COV-020',
+          coverageType: 'Hospitalization',
+          planCd: 'PLN-D',
+          faceAmount: '¥500,000',
+          premium: '¥5,000',
+          beneficiaryId: 'BEN-004',
+        },
+      ],
     },
   ];
   selectedPolicy: Policy | null = null;

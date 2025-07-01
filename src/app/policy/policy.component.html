@@ -6,8 +6,8 @@
     <table class="policy-table">
       <thead>
         <tr>
-          <th>ID</th>
-          <th>Name</th>
+          <th>Policy Number</th>
+          <th>Product Name</th>
           <th>Type</th>
           <th>Status</th>
           <th>Premium</th>
@@ -16,11 +16,11 @@
       </thead>
       <tbody>
         <tr *ngFor="let policy of policies">
-          <td>{{ policy.id }}</td>
-          <td>{{ policy.name }}</td>
-          <td>{{ policy.type }}</td>
-          <td>{{ policy.status }}</td>
-          <td>{{ policy.premium }}</td>
+          <td>{{ policy.policyNumber }}</td>
+          <td>{{ policy.productName }}</td>
+          <td>{{ policy.policyType }}</td>
+          <td>{{ policy.policyStatus }}</td>
+          <td>{{ policy.standardPremium }}</td>
           <td class="policy-action-btns">
             <button (click)="selectPolicy(policy)">詳細</button>
           </td>
@@ -31,11 +31,86 @@
   <div *ngIf="selectedPolicy">
     <h2 class="policy-title">Policy Details / 契約詳細</h2>
     <div class="policy-detail">
-      <p><strong>ID:</strong> {{ selectedPolicy.id }}</p>
-      <p><strong>Name:</strong> {{ selectedPolicy.name }}</p>
-      <p><strong>Type:</strong> {{ selectedPolicy.type }}</p>
-      <p><strong>Status:</strong> {{ selectedPolicy.status }}</p>
-      <p><strong>Premium:</strong> {{ selectedPolicy.premium }}</p>
+      <h3 class="policy-section-title">Policy</h3>
+      <table class="policy-details-table">
+        <thead>
+          <tr>
+            <th>Field</th>
+            <th>Japanese</th>
+            <th>Value</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Policy Number</td>
+            <td>証券番号</td>
+            <td>{{ selectedPolicy.policyNumber }}</td>
+          </tr>
+          <tr>
+            <td>Product Name</td>
+            <td>商品名</td>
+            <td>{{ selectedPolicy.productName }}</td>
+          </tr>
+          <tr>
+            <td>Type</td>
+            <td>種類</td>
+            <td>{{ selectedPolicy.policyType }}</td>
+          </tr>
+          <tr>
+            <td>Status</td>
+            <td>状態</td>
+            <td>{{ selectedPolicy.policyStatus }}</td>
+          </tr>
+          <tr>
+            <td>Premium</td>
+            <td>保険料</td>
+            <td>{{ selectedPolicy.standardPremium }}</td>
+          </tr>
+          <tr>
+            <td>Payment Method</td>
+            <td>支払方法</td>
+            <td>{{ selectedPolicy.paymentMethod }}</td>
+          </tr>
+          <tr>
+            <td>Effective Start</td>
+            <td>始期日</td>
+            <td>{{ selectedPolicy.effectiveStartDT }}</td>
+          </tr>
+          <tr>
+            <td>Renewal Status</td>
+            <td>更新状況</td>
+            <td>{{ selectedPolicy.policyRenewalStatus }}</td>
+          </tr>
+          <tr>
+            <td>Renewal Date</td>
+            <td>更新日</td>
+            <td>{{ selectedPolicy.policyRenewalDT }}</td>
+          </tr>
+        </tbody>
+      </table>
+      <h3>Coverage</h3>
+      <table class="coverage-table">
+        <thead>
+          <tr>
+            <th>Coverage ID</th>
+            <th>Type</th>
+            <th>Plan Code</th>
+            <th>Face Amount</th>
+            <th>Premium</th>
+            <th>Beneficiary</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let cov of selectedPolicy.coverages">
+            <td>{{ cov.coverageId }}</td>
+            <td>{{ cov.coverageType }}</td>
+            <td>{{ cov.planCd }}</td>
+            <td>{{ cov.faceAmount }}</td>
+            <td>{{ cov.premium }}</td>
+            <td>{{ cov.beneficiaryId }}</td>
+          </tr>
+        </tbody>
+      </table>
       <button (click)="backToList()">戻る</button>
     </div>
   </div>
