@@ -2,13 +2,14 @@
 <header class="dashboard-header">
   <div class="dashboard-header-content">
     <div class="dashboard-logo">
-      Customer Portal <span class="dashboard-logo-jp">カスタマーポータル</span>
+      Customer Portal<br />
+      <span class="dashboard-logo-jp">カスタマーポータル</span>
     </div>
     <div class="dashboard-welcome">
       <ng-container *ngIf="userName; else guest">
         ようこそ、{{ userName }} 様！
       </ng-container>
-      <ng-template #guest>ようこそ、ユーザー様！</ng-template>
+      <ng-template #guest>ようこそ、ユーザー 様！</ng-template>
     </div>
     <div class="dashboard-header-actions">
       <a routerLink="/dashboard" class="dashboard-home-link"

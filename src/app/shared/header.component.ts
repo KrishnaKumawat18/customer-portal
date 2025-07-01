@@ -17,7 +17,7 @@ export class HeaderComponent {
   @Output() logout = new EventEmitter<void>();
   userName: string | null = null;
 
-  constructor(private auth: AuthService) {
+  constructor(private readonly auth: AuthService) {
     this.setUserName();
     window.addEventListener('storage', () => this.setUserName());
   }

@@ -36,7 +36,7 @@ import { AuthService } from '../auth/auth.service';
         />
         <div class="image-caption">
           <span class="image-caption-text">
-            保険契約・請求・請求書・支払い・被保険者など、さまざまなサービスを一元管理できるカスタマーポータルです。
+            保険契約・保険金請求・請求書・お支払い・被保険者など、さまざまなサービスを一元管理できるカスタマーポータルです。
           </span>
         </div>
       </div>

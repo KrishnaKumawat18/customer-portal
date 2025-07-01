@@ -3,6 +3,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HeaderComponent } from '../shared/header.component';
+import { AuthService } from '../auth/auth.service';
 import { Router } from '@angular/router';
 
 interface PolicyCoverage {
@@ -110,7 +111,11 @@ export class PolicyComponent {
   ];
   selectedPolicy: Policy | null = null;
 
-  constructor(private router: Router) {}
+  constructor(private auth: AuthService, private router: Router) {
+    if (!this.auth.isAuthenticated()) {
+      this.router.navigate(['/']);
+    }
+  }
 
   selectPolicy(policy: Policy) {
     this.selectedPolicy = policy;
