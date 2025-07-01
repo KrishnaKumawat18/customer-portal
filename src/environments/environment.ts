@@ -4,6 +4,12 @@
 
 export const environment = {
   production: false,
+  auth: {
+    clientId: 'Tw9b9dosVHcZNeScKMB8STnQWvR7liGO',
+    issuer: 'https://dev-sdb0ybsr3l3m0zm5.jp.auth0.com',
+    redirectUri: 'http://localhost:4200/callback',
+    scope: 'openid profile email',
+  },
 };
 
 /*

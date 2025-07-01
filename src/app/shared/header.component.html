@@ -4,7 +4,12 @@
     <div class="dashboard-logo">
       Customer Portal <span class="dashboard-logo-jp">カスタマーポータル</span>
     </div>
-    <div class="dashboard-welcome">ようこそ、ユーザー様！ Welcome, User!</div>
+    <div class="dashboard-welcome">
+      <ng-container *ngIf="userName; else guest">
+        ようこそ、{{ userName }}様！ Welcome, {{ userName }}!
+      </ng-container>
+      <ng-template #guest>ようこそ、ユーザー様！ Welcome, User!</ng-template>
+    </div>
     <div class="dashboard-header-actions">
       <a routerLink="/dashboard" class="dashboard-home-link"
         >ダッシュボードへ戻る</a
