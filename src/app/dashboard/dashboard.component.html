@@ -6,26 +6,22 @@
       <div class="dashboard-card-title">Policy / 契約</div>
       <div class="dashboard-card-desc">Active: 3<br />Renewal Due: 1</div>
     </div>
+    <div class="dashboard-card" (click)="goToInsured()" style="cursor: pointer">
+      <div class="dashboard-card-icon">👤</div>
+      <div class="dashboard-card-title">Insured / 被保険者</div>
+      <div class="dashboard-card-desc">Primary: 山田太郎<br />Family: 3</div>
+    </div>
     <div class="dashboard-card" (click)="goToClaims()" style="cursor: pointer">
       <div class="dashboard-card-icon">💰</div>
       <div class="dashboard-card-title">Claims / 保険金請求</div>
       <div class="dashboard-card-desc">Open: 2<br />Closed: 5</div>
-    </div>
-    <div class="dashboard-card" (click)="goToBill()" style="cursor: pointer">
-      <div class="dashboard-card-icon">📄</div>
-      <div class="dashboard-card-title">Bill / 請求書</div>
-      <div class="dashboard-card-desc">Unpaid: 1<br />Paid: 4</div>
     </div>
     <div class="dashboard-card" (click)="goToPayment()" style="cursor: pointer">
       <div class="dashboard-card-icon">💳</div>
       <div class="dashboard-card-title">Payment / お支払い</div>
       <div class="dashboard-card-desc">Last: ¥12,000<br />Next: ¥8,000</div>
     </div>
-    <div class="dashboard-card" (click)="goToInsured()" style="cursor: pointer">
-      <div class="dashboard-card-icon">👤</div>
-      <div class="dashboard-card-title">Insured / 被保険者</div>
-      <div class="dashboard-card-desc">Primary: 山田太郎<br />Family: 3</div>
-    </div>
+
     <div
       class="dashboard-card"
       (click)="goToDownload()"
@@ -48,12 +44,14 @@
     </div>
     <div
       class="dashboard-card"
-      (click)="goToSelfService()"
+      (click)="goToMyRequests()"
       style="cursor: pointer"
     >
-      <div class="dashboard-card-icon">🛠️</div>
-      <div class="dashboard-card-title">Self-service / セルフサービス</div>
-      <div class="dashboard-card-desc">Update info, request docs, more</div>
+      <div class="dashboard-card-icon">📝</div>
+      <div class="dashboard-card-title">My Requests / マイリクエスト</div>
+      <div class="dashboard-card-desc">
+        Submit service requests, update info, and more
+      </div>
     </div>
   </div>
 </main>
